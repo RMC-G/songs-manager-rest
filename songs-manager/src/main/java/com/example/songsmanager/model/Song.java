@@ -25,19 +25,6 @@ public class Song {
 	@Temporal(TemporalType.DATE)
 	private LocalDate releaseDate;
 
-	public Song() {
-		super();
-	}
-
-	public Song(Integer id, String name, String artist, String album, LocalDate releaseDate) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.artist = artist;
-		this.album = album;
-		this.releaseDate = releaseDate;
-	}
-
 	public Integer getId() {
 		return id;
 	}
@@ -77,11 +64,5 @@ public class Song {
 	public void setReleaseDate(LocalDate releaseDate) {
 		this.releaseDate = releaseDate;
 	}
-
-//	@Override
-//	public String toString() {
-//		return "Song [id=" + id + ", name=" + name + ", artist=" + artist + ", album=" + album + ", releaseDate="
-//				+ releaseDate + "]";
-//	}
 
 }
