@@ -78,10 +78,10 @@ public class Song {
 		this.releaseDate = releaseDate;
 	}
 
-	@Override
-	public String toString() {
-		return "Song [id=" + id + ", name=" + name + ", artist=" + artist + ", album=" + album + ", releaseDate="
-				+ releaseDate + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Song [id=" + id + ", name=" + name + ", artist=" + artist + ", album=" + album + ", releaseDate="
+//				+ releaseDate + "]";
+//	}
 
 }

@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,7 +52,15 @@ public class SongResource {
 
 	@PutMapping("/songs/{id}")
 	public void editSong(@PathVariable String id, @RequestBody Song song) {
-		Song originalSong = getSongById(id);
-		;
+		if (getSongById(id) != null) {
+			song.setId(Integer.valueOf(id));
+			service.save(song);
+		}
+	}
+
+	@DeleteMapping("/songs/{id}")
+	public ResponseEntity<Object> deleteSongById(@PathVariable String id) {
+		service.deleteById(getSongById(id).getId());
+		return ResponseEntity.noContent().build();
 	}
 }
