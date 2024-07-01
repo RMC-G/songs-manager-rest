@@ -35,8 +35,8 @@ public class SongResource {
 	}
 
 	@GetMapping("/songs/{id}")
-	public Song getSongById(@PathVariable String id) {
-		Optional<Song> optSong = service.findById(Integer.valueOf(id));
+	public Song getSongById(@PathVariable Integer id) {
+		Optional<Song> optSong = service.findById(id);
 		if (optSong.isEmpty()) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
@@ -51,7 +51,7 @@ public class SongResource {
 	}
 
 	@PutMapping("/songs/{id}")
-	public void editSong(@PathVariable String id, @RequestBody Song song) {
+	public void editSong(@PathVariable Integer id, @RequestBody Song song) {
 		if (getSongById(id) != null) {
 			song.setId(Integer.valueOf(id));
 			service.save(song);
@@ -59,7 +59,7 @@ public class SongResource {
 	}
 
 	@DeleteMapping("/songs/{id}")
-	public ResponseEntity<Object> deleteSongById(@PathVariable String id) {
+	public ResponseEntity<Object> deleteSongById(@PathVariable Integer id) {
 		service.deleteById(getSongById(id).getId());
 		return ResponseEntity.noContent().build();
 	}
