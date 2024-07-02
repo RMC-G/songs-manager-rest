@@ -11,7 +11,7 @@ Dopo aver scaricato il progetto, all'interno di `src/main/resources` si troveran
 * `data.sql`, script da eseguire per creare database e tabelle necessarie.
 * `application.properties`, file di configurazione con i dati di connessione al db.
 
-Aprire con un editor di testo `application.properties` ed inserire `username` e `password` per accesso al DB. Se necessario, modificare le porte relative al Db ed al server (default rispettivamente 3306 e 8080).
+Aprire con un editor di testo `application.properties` ed inserire `username` e `password` per accesso al DB. Se necessario, modificare le porte relative al DB ed al server (default rispettivamente 3306 e 8080).
 
 Installati i requisiti ed effettuate le operazioni iniziali, aprire un terminale e spostarsi nella directory `songs-manager`, dove è presente il file `pom.xml`.
 Una volta all'interno, eseguire il comando `mvn spring-boot:run` per avviare l'applicazione.
